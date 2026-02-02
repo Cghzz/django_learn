@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+# 路由分发
+from django.urls import include
+from fanju import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cccgg/',views.cccgg),
+    path('django/',include('fanju.urls')),
+    path('flask/',views.flask),
+    path('fastapi/',views.fastapi),
 ]
